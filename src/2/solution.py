@@ -3,16 +3,15 @@ import sys
 # input: set of numbers and target integer
 # output: set of two ints from numbers that sum to target
 def find_pair(numbers, target):
-    for each in numbers:
-        if target - each in numbers:
-            return {target - each, each}
+    for num in numbers:
+        if target - num in numbers:
+            return (target - num, num)
 
 with open(sys.argv[1]) as f:
     # get list of ints
     numbers = {int(line) for line in f}
-    # print(numbers)
-
-    for line in f:
-        s = find_pair(numbers, 2020 - int(line))
-        print(2020-int(line) * s[0] * s[1])
-        sys.exit()
+    for num in numbers:
+        result = find_pair(numbers, 2020 - num)
+        if result is not None:
+            print(2020-num * result[0] * result[1])
+            sys.exit()
