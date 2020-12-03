@@ -2,13 +2,6 @@
 import sys
 import re
 
-"""
-1-3 a: abcde
-1-3 b: cdefg
-2-9 c: ccccccccc
-ANSWER: 2
-"""
-
 valid_passwords_count = 0
 
 with open(sys.argv[1]) as f:
@@ -23,3 +16,27 @@ with open(sys.argv[1]) as f:
             valid_passwords_count += 1
 
 print(valid_passwords_count)
+
+"""
+# advent code challenge day 2 problem 1
+import sys
+
+counter = 0
+result = 0
+
+with open(sys.argv[1]) as f:
+    for line in f:
+        parts = line.split()
+        numbers = parts[0].split("-")
+        c_min = int(numbers[0])
+        c_max = int(numbers[1])
+        letter = parts[1][0]
+        password = parts[2]
+
+        letter_count = password.count(letter)
+
+        if c_min <= letter_count <= c_max:
+            result += 1
+
+    print(result)
+    """
