@@ -26,3 +26,10 @@ for num in range(SEAT_MIN, SEAT_MAX):
         (num + 1) in seat_numbers
     ):
         print(num)
+
+'''
+seat_numbers.sort()
+for i in range(len(seat_numbers) - 1):
+    if seat_numbers[i+1] - seat_numbers[i] == 2:
+        print((seat_numbers[i+1] + seat_numbers[i]) / 2)
+'''
