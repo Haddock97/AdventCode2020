@@ -10,3 +10,17 @@ for group in groups:
     count += len(questions)
 
 print(count)
+
+'''
+import sys
+
+with open(sys.argv[1]) as f:
+    read_data = f.read()
+
+responses = [entry.replace("\n", "") for entry in read_data.split("\n\n")]
+count = 0
+for entry in responses:
+    count += len(set(entry))
+
+print(count)
+'''
