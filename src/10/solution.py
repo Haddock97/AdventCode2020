@@ -14,7 +14,7 @@ def seat_to_binary(seat):
     return int(binary_string, 2)
 
 with open(sys.argv[1]) as f:
-    seat_numbers = [seat_to_binary(seat) for seat in f]
+    seat_numbers = {seat_to_binary(seat) for seat in f}
 
 SEAT_MIN = 8
 SEAT_MAX = (2**10) - 8
