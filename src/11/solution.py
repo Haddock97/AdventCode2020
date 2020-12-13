@@ -2,7 +2,7 @@ import sys
 import string
 
 with open(sys.argv[1]) as f:
-    groups = (group for group in f.read().split('\n\n'))
+    groups = f.read().split('\n\n')
 
 count = 0
 for group in groups:
